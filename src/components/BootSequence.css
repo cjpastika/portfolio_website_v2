@@ -1,0 +1,85 @@
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 500ms ease;
+}
+
+.boot-screen.boot-fading {
+  opacity: 0;
+}
+
+.boot-scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.boot-content {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+  padding: 40px;
+  max-width: 700px;
+  width: 100%;
+  z-index: 2;
+}
+
+.boot-line {
+  white-space: pre;
+  min-height: 1.6em;
+  line-height: 1.6;
+}
+
+.boot-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 530ms step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.boot-skip {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1001;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color 300ms ease;
+}
+
+.boot-skip:hover {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .boot-content {
+    font-size: 13px;
+    padding: 24px;
+  }
+}

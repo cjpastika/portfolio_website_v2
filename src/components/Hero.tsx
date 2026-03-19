@@ -1,0 +1,19 @@
+import './Hero.css';
+
+export default function Hero() {
+  return (
+    <section className="hero" id="hero">
+      <div className="hero-content">
+        <span className="hero-label">SOFTWARE ENGINEER // AEROSPACE &amp; DEFENSE</span>
+        <h1 className="hero-name">COLLIN PASTIKA</h1>
+        <p className="hero-subtitle">Building software for spacecraft, radar, and defense systems.</p>
+        <span className="hero-orgs">NASA &middot; CAE &middot; FLORIDA SPACE INSTITUTE &middot; UCF '26</span>
+      </div>
+      <div className="hero-scroll-indicator">
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 4L8 20M8 20L2 14M8 20L14 14" stroke="#555555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </section>
+  );
+}
