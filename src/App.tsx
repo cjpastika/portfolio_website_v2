@@ -16,6 +16,7 @@ export default function App() {
   const [showSite, setShowSite] = useState(booted);
 
   const handleBootComplete = () => {
+    window.scrollTo(0, 0);
     sessionStorage.setItem('bootCompleted', 'true');
     setBooted(true);
   };

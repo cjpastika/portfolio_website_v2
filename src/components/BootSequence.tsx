@@ -95,12 +95,13 @@ export default function BootSequence({ onComplete }: Props) {
   // Key/click listener during waiting phase
   useEffect(() => {
     if (phase !== 'waiting') return;
-    const handler = () => finish();
-    window.addEventListener('keydown', handler);
-    window.addEventListener('pointerdown', handler);
+    const onKey = (e: KeyboardEvent) => { e.preventDefault(); finish(); };
+    const onPointer = () => finish();
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('pointerdown', onPointer);
     return () => {
-      window.removeEventListener('keydown', handler);
-      window.removeEventListener('pointerdown', handler);
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('pointerdown', onPointer);
     };
   }, [phase, finish]);
 
