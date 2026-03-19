@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import BootSequence from './components/BootSequence';
 import Navbar from './components/Navbar';
-import TerminalSection, { TerminalLine } from './components/TerminalSection';
+import TerminalSection from './components/TerminalSection';
+import type { TerminalLine } from './components/TerminalSection';
 
 const HERO_LINES: TerminalLine[] = [
   { type: 'divider' },

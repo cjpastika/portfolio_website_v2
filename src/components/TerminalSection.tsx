@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import './TerminalSection.css';
 
-export type TerminalLine =
+export type { TerminalLine };
+type TerminalLine =
   | { type: 'heading'; content: string }
   | { type: 'name'; content: string }
   | { type: 'label'; content: string }
