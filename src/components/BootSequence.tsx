@@ -20,10 +20,10 @@ const BOOT_LINES: BootLine[] = [
   { text: '> SYSTEM ONLINE. WELCOME.' },
 ];
 
-const CHAR_DELAY = 40;
-const SUFFIX_DELAY = 300;
-const INITIAL_DELAY = 500;
-const END_PAUSE = 800;
+const CHAR_DELAY = 22;
+const SUFFIX_DELAY = 150;
+const INITIAL_DELAY = 250;
+const END_PAUSE = 400;
 const FADE_DURATION = 500;
 
 interface Props {

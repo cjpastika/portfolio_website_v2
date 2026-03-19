@@ -3,10 +3,37 @@
   inset: 0;
   z-index: 1000;
   background: #000000;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 500ms ease;
+}
+
+.boot-screen::before,
+.boot-screen::after {
+  content: '';
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.boot-screen::before {
+  top: 24px;
+  left: 24px;
+  border-width: 1px 0 0 1px;
+}
+
+.boot-screen::after {
+  bottom: 24px;
+  right: 24px;
+  border-width: 0 1px 1px 0;
 }
 
 .boot-screen.boot-fading {
