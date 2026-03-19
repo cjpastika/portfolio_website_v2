@@ -7,6 +7,15 @@
   text-align: center;
   position: relative;
   padding: 0 20px;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -24,13 +33,13 @@
 }
 
 .hero-name {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 72px;
-  letter-spacing: 0.08em;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-primary);
-  line-height: 1.1;
+  line-height: 1.0;
 }
 
 .hero-subtitle {
@@ -62,7 +71,7 @@
 
 @media (max-width: 768px) {
   .hero-name {
-    font-size: 36px;
+    font-size: 52px;
   }
 
   .hero-subtitle {
@@ -80,6 +89,6 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-name {
-    font-size: 56px;
+    font-size: 76px;
   }
 }

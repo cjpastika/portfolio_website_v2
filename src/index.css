@@ -7,8 +7,8 @@
   --text-primary: #FFFFFF;
   --text-secondary: #888888;
   --text-muted: #555555;
-  --accent: #00FF41;
-  --accent-glow: rgba(0, 255, 65, 0.15);
+  --accent: #FFFFFF;
+  --accent-glow: rgba(255, 255, 255, 0.08);
 }
 
 *, *::before, *::after {
