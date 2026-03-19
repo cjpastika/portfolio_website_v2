@@ -85,23 +85,15 @@
   50% { opacity: 0; }
 }
 
-.boot-skip {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 1001;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--text-muted);
-  background: none;
-  border: none;
+.boot-prompt {
+  margin-top: 16px;
+  animation: prompt-blink 1s step-end infinite;
   cursor: pointer;
-  letter-spacing: 0.05em;
-  transition: color 300ms ease;
 }
 
-.boot-skip:hover {
-  color: var(--text-secondary);
+@keyframes prompt-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @media (max-width: 768px) {

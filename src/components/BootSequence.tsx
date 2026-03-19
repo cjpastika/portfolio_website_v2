@@ -33,7 +33,7 @@ interface Props {
 export default function BootSequence({ onComplete }: Props) {
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLineText, setCurrentLineText] = useState('');
-  const [phase, setPhase] = useState<'delay' | 'typing' | 'fading' | 'done'>('delay');
+  const [phase, setPhase] = useState<'delay' | 'typing' | 'waiting' | 'fading' | 'done'>('delay');
   const [lineIndex, setLineIndex] = useState(0);
 
   const finish = useCallback(() => {
@@ -55,7 +55,7 @@ export default function BootSequence({ onComplete }: Props) {
   useEffect(() => {
     if (phase !== 'typing') return;
     if (lineIndex >= BOOT_LINES.length) {
-      const t = setTimeout(finish, END_PAUSE);
+      const t = setTimeout(() => setPhase('waiting'), END_PAUSE);
       return () => clearTimeout(t);
     }
 
@@ -92,6 +92,18 @@ export default function BootSequence({ onComplete }: Props) {
     typeChar();
   }, [phase, lineIndex, finish]);
 
+  // Key/click listener during waiting phase
+  useEffect(() => {
+    if (phase !== 'waiting') return;
+    const handler = () => finish();
+    window.addEventListener('keydown', handler);
+    window.addEventListener('pointerdown', handler);
+    return () => {
+      window.removeEventListener('keydown', handler);
+      window.removeEventListener('pointerdown', handler);
+    };
+  }, [phase, finish]);
+
   if (phase === 'done') return null;
 
   return (
@@ -107,12 +119,10 @@ export default function BootSequence({ onComplete }: Props) {
             <span className="boot-cursor" />
           </div>
         )}
+        {phase === 'waiting' && (
+          <div className="boot-line boot-prompt">_ PRESS ANY KEY TO ENTER</div>
+        )}
       </div>
-      {phase !== 'fading' && (
-        <button className="boot-skip" onClick={finish}>
-          SKIP &#9654;
-        </button>
-      )}
     </div>
   );
 }
