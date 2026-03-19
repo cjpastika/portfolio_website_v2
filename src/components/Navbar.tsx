@@ -1,65 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About',      index: 1 },
+  { label: 'Experience', index: 2 },
+  { label: 'Projects',   index: 3 },
+  { label: 'Skills',     index: 4 },
+  { label: 'Contact',    index: 6 },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+interface Props {
+  currentSection: number;
+  navigateTo: (i: number) => void;
+}
+
+export default function Navbar({ currentSection, navigateTo }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
 
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const sections = NAV_LINKS.map((l) =>
-      document.querySelector(l.href) as HTMLElement
-    ).filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection('#' + entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: '-64px 0px 0px 0px' }
-    );
-
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
-
-  const handleClick = (href: string) => {
+  const handleClick = (index: number) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigateTo(index);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className="navbar navbar-scrolled">
       <div className="navbar-inner">
         <a
           className="navbar-logo"
           href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+          onClick={(e) => { e.preventDefault(); handleClick(0); }}
         >
           COLLIN PASTIKA
         </a>
@@ -67,13 +36,10 @@ export default function Navbar() {
         <div className="navbar-links">
           {NAV_LINKS.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
-              className={`navbar-link ${activeSection === link.href ? 'active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick(link.href);
-              }}
+              key={link.index}
+              href="#"
+              className={`navbar-link ${currentSection === link.index ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); handleClick(link.index); }}
             >
               {link.label}
             </a>
@@ -95,13 +61,10 @@ export default function Navbar() {
         <div className="navbar-mobile-overlay">
           {NAV_LINKS.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.index}
+              href="#"
               className="navbar-mobile-link"
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick(link.href);
-              }}
+              onClick={(e) => { e.preventDefault(); handleClick(link.index); }}
             >
               {link.label}
             </a>
