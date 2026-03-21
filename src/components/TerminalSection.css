@@ -138,7 +138,7 @@
 .ts-nav-btn {
   font-family: 'JetBrains Mono', monospace;
   font-size: 18px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   background: none;
   border: 1px solid var(--text-muted);
   cursor: pointer;
