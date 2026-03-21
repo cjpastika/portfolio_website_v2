@@ -187,9 +187,14 @@
 }
 
 @media (max-width: 768px) {
+  .ts-screen {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .ts-content {
     font-size: 13px;
-    padding: 24px 24px 80px;
+    padding: 32px 24px 80px;
   }
 
   .ts-name {
