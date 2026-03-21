@@ -20,12 +20,14 @@ interface Props {
   totalSections: number;
   isFirst: boolean;
   isLast: boolean;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
 const LINE_DELAY = 80;
 
 export default function TerminalSection({
-  lines, isActive, onReady, sectionIndex, totalSections, isFirst, isLast,
+  lines, isActive, onReady, sectionIndex, totalSections, isFirst, isLast, onNext, onPrev,
 }: Props) {
   const [revealedCount, setRevealedCount] = useState(0);
   const [ready, setReady] = useState(false);
@@ -111,7 +113,23 @@ export default function TerminalSection({
         {isActive && !ready && <span className="ts-cursor" />}
       </div>
       {ready && (
-        <div className="ts-nav-hint">{navHint}</div>
+        <>
+          <div className="ts-nav-hint">{navHint}</div>
+          <div className="ts-mobile-nav">
+            <button
+              className="ts-mobile-nav-btn"
+              onClick={onPrev}
+              disabled={isFirst}
+              aria-label="Previous section"
+            >←</button>
+            <span className="ts-mobile-nav-counter">{pad(sectionIndex + 1)} / {pad(totalSections)}</span>
+            <button
+              className="ts-mobile-nav-btn"
+              onClick={onNext}
+              aria-label="Next section"
+            >→</button>
+          </div>
+        </>
       )}
     </div>
   );

@@ -186,6 +186,22 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [showSite, goNext, goPrev]);
 
+  useEffect(() => {
+    if (!showSite) return;
+    let startX = 0;
+    const onTouchStart = (e: TouchEvent) => { startX = e.touches[0].clientX; };
+    const onTouchEnd = (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) dx < 0 ? goNext() : goPrev();
+    };
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchend', onTouchEnd, { passive: true });
+    return () => {
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [showSite, goNext, goPrev]);
+
   return (
     <>
       {!booted && <BootSequence onComplete={handleBootComplete} />}
@@ -202,6 +218,8 @@ export default function App() {
               totalSections={SECTIONS.length}
               isFirst={i === 0}
               isLast={i === SECTIONS.length - 1}
+              onNext={goNext}
+              onPrev={goPrev}
             />
           ))}
         </>

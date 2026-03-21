@@ -109,9 +109,12 @@
 
 .navbar-mobile-overlay {
   position: fixed;
-  inset: 0;
-  background: #000000;
-  z-index: 99;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.97);
+  z-index: 90;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -24,42 +24,44 @@ export default function Navbar({ currentSection, navigateTo }: Props) {
   };
 
   return (
-    <nav className="navbar navbar-scrolled">
-      <div className="navbar-inner">
-        <a
-          className="navbar-logo"
-          href="#"
-          onClick={(e) => { e.preventDefault(); handleClick(0); }}
-        >
-          COLLIN PASTIKA
-        </a>
+    <>
+      <nav className="navbar navbar-scrolled">
+        <div className="navbar-inner">
+          <a
+            className="navbar-logo"
+            href="#"
+            onClick={(e) => { e.preventDefault(); handleClick(0); }}
+          >
+            COLLIN PASTIKA
+          </a>
 
-        <div className="navbar-links">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.index}
-              href="#"
-              className={`navbar-link ${currentSection === link.index ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); handleClick(link.index); }}
-            >
-              {link.label}
-            </a>
-          ))}
+          <div className="navbar-links">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.index}
+                href="#"
+                className={`navbar-link ${currentSection === link.index ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); handleClick(link.index); }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <button
+            className={`navbar-hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
-
-        <button
-          className={`navbar-hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
+      </nav>
 
       {menuOpen && (
-        <div className="navbar-mobile-overlay">
+        <div className="navbar-mobile-overlay" onClick={() => setMenuOpen(false)}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.index}
@@ -72,6 +74,6 @@ export default function Navbar({ currentSection, navigateTo }: Props) {
           ))}
         </div>
       )}
-    </nav>
+    </>
   );
 }

@@ -138,10 +138,14 @@
   animation: ts-blink 1.2s step-end infinite;
 }
 
+.ts-mobile-nav {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .ts-content {
     font-size: 13px;
-    padding: 24px 24px 72px;
+    padding: 24px 24px 80px;
   }
 
   .ts-name {
@@ -153,7 +157,51 @@
   }
 
   .ts-nav-hint {
+    display: none;
+  }
+
+  .ts-mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 24px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9) 40%);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+  }
+
+  .ts-mobile-nav-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 200ms ease;
+  }
+
+  .ts-mobile-nav-btn:not(:disabled):active {
+    color: var(--text-primary);
+  }
+
+  .ts-mobile-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  .ts-mobile-nav-counter {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    padding: 16px 24px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
   }
 }
