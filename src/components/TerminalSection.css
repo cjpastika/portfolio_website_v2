@@ -140,24 +140,27 @@
   font-size: 18px;
   color: var(--text-secondary);
   background: none;
-  border: none;
+  border: 1px solid var(--text-secondary);
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 6px 14px;
   min-width: 44px;
-  min-height: 44px;
+  min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 200ms ease;
+  transition: color 200ms ease, border-color 200ms ease;
+  animation: ts-blink 1.2s step-end infinite;
 }
 
 .ts-nav-btn:hover:not(:disabled) {
   color: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 .ts-nav-btn:disabled {
   opacity: 0.2;
   cursor: default;
+  animation: none;
 }
 
 .ts-nav-center {
