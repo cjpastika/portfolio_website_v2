@@ -140,7 +140,7 @@
   font-size: 18px;
   color: var(--text-secondary);
   background: none;
-  border: 1px solid var(--text-secondary);
+  border: 1px solid var(--text-muted);
   cursor: pointer;
   padding: 4px 10px;
   min-width: unset;
