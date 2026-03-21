@@ -142,9 +142,11 @@
   background: none;
   border: 1px solid var(--text-secondary);
   cursor: pointer;
-  padding: 6px 14px;
-  min-width: 44px;
-  min-height: 36px;
+  padding: 4px 10px;
+  min-width: unset;
+  min-height: unset;
+  width: 36px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
