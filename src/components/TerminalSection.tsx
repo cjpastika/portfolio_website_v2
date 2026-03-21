@@ -113,23 +113,23 @@ export default function TerminalSection({
         {isActive && !ready && <span className="ts-cursor" />}
       </div>
       {ready && (
-        <>
-          <div className="ts-nav-hint">{navHint}</div>
-          <div className="ts-mobile-nav">
-            <button
-              className="ts-mobile-nav-btn"
-              onClick={onPrev}
-              disabled={isFirst}
-              aria-label="Previous section"
-            >←</button>
-            <span className="ts-mobile-nav-counter">{pad(sectionIndex + 1)} / {pad(totalSections)}</span>
-            <button
-              className="ts-mobile-nav-btn"
-              onClick={onNext}
-              aria-label="Next section"
-            >→</button>
+        <div className="ts-nav-bar">
+          <button
+            className="ts-nav-btn"
+            onClick={onPrev}
+            disabled={isFirst}
+            aria-label="Previous section"
+          >←</button>
+          <div className="ts-nav-center">
+            <span className="ts-nav-hint-text">{navHint}</span>
+            <span className="ts-nav-counter">{pad(sectionIndex + 1)} / {pad(totalSections)}</span>
           </div>
-        </>
+          <button
+            className="ts-nav-btn"
+            onClick={onNext}
+            aria-label="Next section"
+          >→</button>
+        </div>
       )}
     </div>
   );

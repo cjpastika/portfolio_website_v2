@@ -122,24 +122,63 @@
   50% { opacity: 0; }
 }
 
-.ts-nav-hint {
+.ts-nav-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px 40px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85) 40%);
+  z-index: 3;
+}
+
+.ts-nav-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms ease;
+}
+
+.ts-nav-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+}
+
+.ts-nav-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.ts-nav-center {
+  flex: 1;
   text-align: center;
+}
+
+.ts-nav-hint-text {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 0.08em;
-  z-index: 3;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 40%);
   animation: ts-blink 1.2s step-end infinite;
 }
 
-.ts-mobile-nav {
+.ts-nav-counter {
   display: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
 }
 
 @media (max-width: 768px) {
@@ -156,52 +195,21 @@
     font-size: 14px;
   }
 
-  .ts-nav-hint {
+  .ts-nav-bar {
+    padding: 12px 16px 20px;
+  }
+
+  .ts-nav-btn {
+    font-size: 22px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .ts-nav-hint-text {
     display: none;
   }
 
-  .ts-mobile-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 24px 20px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9) 40%);
-    align-items: center;
-    justify-content: space-between;
-    z-index: 3;
-  }
-
-  .ts-mobile-nav-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 22px;
-    color: var(--text-muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 16px;
-    min-width: 48px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 200ms ease;
-  }
-
-  .ts-mobile-nav-btn:not(:disabled):active {
-    color: var(--text-primary);
-  }
-
-  .ts-mobile-nav-btn:disabled {
-    opacity: 0.2;
-    cursor: default;
-  }
-
-  .ts-mobile-nav-counter {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
+  .ts-nav-counter {
+    display: inline;
   }
 }
