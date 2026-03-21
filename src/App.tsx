@@ -18,6 +18,7 @@ const ABOUT_LINES: TerminalLine[] = [
   { type: 'heading', content: 'MISSION BRIEF' },
   { type: 'divider' },
   { type: 'text', content: "Computer Science student at UCF's Burnett Honors College graduating August 2026." },
+  { type: 'spacer' },
   { type: 'text', content: 'Currently at NASA Kennedy Space Center developing C++ Wireshark plugins for spacecraft telemetry parsing in the Launch Control System.' },
   { type: 'spacer' },
   { type: 'text', content: 'Previously built radio control interface software for multi-domain military systems at CAE on a $455M General Dynamics defense contract.' },
