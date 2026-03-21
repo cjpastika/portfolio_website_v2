@@ -102,7 +102,7 @@ const EDUCATION_LINES: TerminalLine[] = [
   { type: 'divider' },
   { type: 'heading', content: 'UNIVERSITY OF CENTRAL FLORIDA' },
   { type: 'text', content: 'Burnett Honors College' },
-  { type: 'text', content: 'B.S. Computer Science · GPA: 3.6 · August 2023 — August 2026' },
+  { type: 'text', content: 'B.S. Computer Science · GPA: 3.7 · August 2023 — August 2026' },
   { type: 'spacer' },
   { type: 'label', content: 'SELECTED COURSEWORK' },
   { type: 'text', content: 'Robot Vision · Security in Computing · Cyber Defense Analysis' },

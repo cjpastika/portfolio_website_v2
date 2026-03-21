@@ -12,7 +12,7 @@ export default function Education() {
           <h3 className="education-school">UNIVERSITY OF CENTRAL FLORIDA</h3>
           <p className="education-college">Burnett Honors College</p>
           <p className="education-details">
-            B.S. Computer Science &middot; GPA: 3.6 &middot; August 2023 — August 2026
+            B.S. Computer Science &middot; GPA: 3.7 &middot; August 2023 — August 2026
           </p>
           <p className="education-courses">
             <span className="education-courses-label">Selected Coursework:</span> Robot Vision,
