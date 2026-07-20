@@ -11,7 +11,7 @@ const BOOT_LINES: BootLine[] = [
   { text: '> LOADING KERNEL MODULES..............', suffix: ' [OK]' },
   { text: '> ESTABLISHING SECURE CONNECTION......', suffix: ' [OK]' },
   { text: '> AUTHENTICATING CREDENTIALS..........', suffix: ' [OK]' },
-  { text: '> CLEARANCE: ELIGIBLE' },
+  { text: '> CLEARANCE: SECRET' },
   { text: '> OPERATOR: COLLIN PASTIKA' },
   { text: '> ROLE: SOFTWARE ENGINEER' },
   { text: '> SECTOR: AEROSPACE // DEFENSE' },

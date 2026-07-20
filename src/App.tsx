@@ -27,7 +27,7 @@ const ABOUT_LINES: TerminalLine[] = [
   { type: 'spacer' },
   { type: 'text', content: "Led autonomous navigation software for FSI's rover platform (based on NASA's RASSOR lunar rover) using C++, ROS2, Nav2, OpenCV, and Kubernetes." },
   { type: 'spacer' },
-  { type: 'text', content: 'US Citizen · Clearance eligible.' },
+  { type: 'text', content: 'US Citizen · Secret Clearance.' },
 ];
 
 const EXPERIENCE_LINES: TerminalLine[] = [

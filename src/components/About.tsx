@@ -22,7 +22,7 @@ export default function About() {
           <p className="stagger-child">
             Led autonomous navigation software for Florida Space Institute's rover platform —
             based on NASA's RASSOR lunar rover — using C++, ROS2, Nav2, OpenCV, and Kubernetes.
-            US Citizen with clearance eligibility.
+            US Citizen with Secret clearance.
           </p>
         </div>
       </div>
