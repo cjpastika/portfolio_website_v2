@@ -3,9 +3,15 @@ import './Projects.css';
 
 const PROJECTS = [
   {
+    name: 'IRON RAIN',
+    description: 'Python MAVLink framework targeting ArduPilot/PX4 with ACK-verified attack modules. ESP32/ESP-IDF MitM firmware injecting over a SiK link, hardware-validated on a real airframe.',
+    tech: ['Python', 'MAVLink', 'ArduPilot/PX4', 'ESP32', 'ESP-IDF', 'SiK'],
+    link: undefined,
+  },
+  {
     name: 'RE-RASSOR SYSTEM SOFTWARE',
     subtitle: 'Team Lead',
-    description: "Autonomous navigation for Florida Space Institute's rover platform, built on NASA's RASSOR lunar rover",
+    description: 'Led agile team building autonomous C++/ROS2 navigation with Nav2, OpenCV, and ARUCO for a NASA lunar rover. Engineered multi-threaded SLAM and path planning across Kubernetes-deployed distributed nodes.',
     tech: ['C++', 'ROS2', 'Nav2', 'OpenCV', 'ARUCO', 'Kubernetes'],
     link: undefined,
   },
@@ -20,12 +26,6 @@ const PROJECTS = [
     description: 'Modified COTS radar for airspace scanning and real-time UAS domain awareness with SOUTHCOM and DIU',
     tech: ['C++', 'Raymarine API', 'Qt', 'OpenCV'],
     link: 'https://github.com/cjpastika/Radar-HUD',
-  },
-  {
-    name: 'RADAR SIMULATION SYSTEM',
-    description: 'Radar signal generator simulating moving targets with realistic physics and dynamic signal strengths',
-    tech: ['JavaScript', 'Node.js', 'MySQL', 'C++'],
-    link: 'https://github.com/cjpastika/Radar-Data-Visualization',
   },
 ];
 

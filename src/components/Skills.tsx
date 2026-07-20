@@ -5,8 +5,7 @@ const SKILLS = [
   { category: 'LANGUAGES', items: ['C++', 'C', 'Python', 'Bash', 'JavaScript', 'Java'] },
   { category: 'PROTOCOLS', items: ['TCP/IP', 'UDP', 'RS-232', 'MIL-STD-1553', 'HAVEQUICK', 'SINCGARS', 'DDS'] },
   { category: 'FRAMEWORKS', items: ['ROS2', 'Nav2', 'Qt', 'OpenCV', 'Google Test', 'React.js', 'Node.js'] },
-  { category: 'TOOLS', items: ['Git', 'Wireshark', 'CMake', 'Jenkins', 'GitHub Actions', 'Docker', 'Kubernetes'] },
-  { category: 'PLATFORMS', items: ['Red Hat Linux', 'Ubuntu', 'Jira', 'Confluence', 'SonarQube'] },
+  { category: 'TOOLS', items: ['Git', 'Wireshark', 'CMake', 'Jenkins', 'GitHub Actions', 'Jira', 'Confluence', 'SonarQube', 'Docker', 'Kubernetes', 'Red Hat Linux', 'Ubuntu'] },
 ];
 
 export default function Skills() {

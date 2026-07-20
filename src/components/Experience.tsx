@@ -3,13 +3,30 @@ import './Experience.css';
 
 const ROLES = [
   {
+    date: 'AUG 2026 — PRESENT',
+    location: 'ORLANDO, FL',
+    company: 'General Dynamics Mission Systems',
+    title: 'Engineering Leadership Program Software Engineer',
+    bullets: [],
+  },
+  {
+    date: 'MAY 2026 — JUL 2026',
+    location: 'TAMPA, FL',
+    company: 'CAE',
+    title: 'Software Engineering Intern',
+    bullets: [
+      'Prototyped 0→1 radio comms simulation for the FLRAA/Cheyenne II and wrote requirements-based test manuals',
+      'Contributed to an F-16 SAR radar simulator by adding shared-memory target insertion, resolution scaling, and GUI updates',
+    ],
+  },
+  {
     date: 'JAN 2026 — MAY 2026',
     location: 'CAPE CANAVERAL, FL',
     company: 'NASA',
-    title: 'Software Engineering Intern — Spaceport Command & Control Software',
+    title: 'Software Engineering Intern',
     bullets: [
-      'Developed C++ Wireshark plugins to parse multi-protocol telemetry and command data for spacecraft ground systems',
-      'Built protocol parsing tools integrating spacecraft data with Launch Control System for mission-critical launch operations',
+      'Built XTCE parser which cut dissector load time 98% (3min to 4s) and developed 5 Wireshark dissectors for Artemis III+',
+      'Resolved Orion dissector bug for Artemis II post-launch analysis, fixing command storage and duplicate ID handling',
     ],
   },
   {
@@ -18,8 +35,8 @@ const ROLES = [
     company: 'DeepWork Capital',
     title: 'Technology & Investment Intern',
     bullets: [
-      'Sole developer building custom full-stack web apps, including web scraper and image exporter tools',
-      'Translated business needs into technical solutions collaborating with non-technical stakeholders',
+      'Architected full-stack web apps as a sole developer, including a web scraper and image exporter, to streamline workflows',
+      'Translated business needs into technical solutions by collaborating with non-technical stakeholders',
     ],
   },
   {
@@ -28,16 +45,15 @@ const ROLES = [
     company: 'CAE',
     title: 'Software Engineering Intern',
     bullets: [
-      'Developed VUHF Radio control interface software using TCP/IP, UDP, RS-232 in multi-domain military systems',
-      'Coordinated cross-team software and hardware testing for $455M General Dynamics contract',
-      'Gained experience with HAVEQUICK and SINCGARS anti-jam systems for contested environments',
+      'Developed VUHF Radio control interface software using TCP/IP, UDP, and RS-232, increasing ATP pass rate 50%',
+      'Leveraged internal messaging frameworks like Wraith and dispatchers to test low-level comms and system synchronization',
     ],
   },
   {
     date: 'MAY 2024 — JUL 2024',
     location: 'ORLANDO, FL',
     company: 'Cru',
-    title: 'US Tech Web Engineering Intern',
+    title: 'Web Engineering Intern',
     bullets: [
       'Supported web app migration from Angular to React (Node.js, GraphQL) serving 90,000+ employees',
     ],
