@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-content">
-        <span className="hero-label">SOFTWARE ENGINEER // GENERAL DYNAMICS MISSION SYSTEMS</span>
+        <span className="hero-label">ENGINEERING LEADERSHIP PROGRAM // GENERAL DYNAMICS MISSION SYSTEMS</span>
         <h1 className="hero-name">COLLIN PASTIKA</h1>
 <span className="hero-orgs">GDMS &middot; NASA &middot; CAE &middot; FLORIDA SPACE INSTITUTE &middot; UCF '26</span>
       </div>

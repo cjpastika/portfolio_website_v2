@@ -7,7 +7,7 @@ import type { TerminalLine } from './components/TerminalSection';
 const HERO_LINES: TerminalLine[] = [
   { type: 'divider' },
   { type: 'name', content: 'COLLIN PASTIKA' },
-  { type: 'label', content: 'SOFTWARE ENGINEER // GENERAL DYNAMICS MISSION SYSTEMS' },
+  { type: 'label', content: 'ENGINEERING LEADERSHIP PROGRAM // GENERAL DYNAMICS MISSION SYSTEMS' },
   { type: 'spacer' },
   { type: 'label', content: "GDMS · NASA · CAE · FLORIDA SPACE INSTITUTE · UCF '26" },
   { type: 'divider' },
@@ -35,8 +35,7 @@ const EXPERIENCE_LINES: TerminalLine[] = [
   { type: 'heading', content: 'OPERATIONS LOG' },
   { type: 'divider' },
   { type: 'label', content: '[AUG 2026 — PRESENT] // ORLANDO, FL' },
-  { type: 'heading', content: 'GENERAL DYNAMICS MISSION SYSTEMS — SOFTWARE ENGINEER' },
-  { type: 'bullet', content: 'Engineering Leadership Program' },
+  { type: 'heading', content: 'GENERAL DYNAMICS MISSION SYSTEMS — ENGINEERING LEADERSHIP PROGRAM' },
   { type: 'divider' },
   { type: 'label', content: '[MAY 2026 — JUL 2026] // TAMPA, FL' },
   { type: 'heading', content: 'CAE — SOFTWARE ENGINEERING INTERN' },

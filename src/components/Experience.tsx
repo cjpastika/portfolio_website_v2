@@ -6,7 +6,7 @@ const ROLES = [
     date: 'AUG 2026 — PRESENT',
     location: 'ORLANDO, FL',
     company: 'General Dynamics Mission Systems',
-    title: 'Engineering Leadership Program Software Engineer',
+    title: 'Engineering Leadership Program',
     bullets: [],
   },
   {
